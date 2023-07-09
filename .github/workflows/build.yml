@@ -13,7 +13,7 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt update
-        sudo apt install coreutils p7zip-full qemu-user-static chromium-browser
+        sudo apt install coreutils p7zip-full qemu-user-static chromium-browser git
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v2
@@ -26,6 +26,11 @@ jobs:
       with:
         path: repository
         submodules: true
+
+    - name: Clone octoprint_install repository
+      run: |
+        cd ~
+        git clone https://github.com/Printerverse/octoprint_install.git
 
     - name: Download Raspbian Image
       run: |
