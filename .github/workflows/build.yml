@@ -51,7 +51,7 @@ jobs:
         sudo modprobe loop
         cd repository/src
         pwd
-        ls -la ../octoprint_install
+        ls -la ./octoprint_install
         sudo bash -x ./build_dist
 
     - name: Copy output
