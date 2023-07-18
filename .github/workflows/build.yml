@@ -8,12 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - name: Install Dependencies
-    #   run: |
-    #     sudo apt update
-    #     sudo apt install coreutils p7zip-full qemu-user-static chromium-browser git
-    #     dpkg -l chromium-browser
-    #     git clone https://github.com/Printerverse/octoprint_install.git
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt install coreutils p7zip-full qemu-user-static chromium-browser git
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v2
