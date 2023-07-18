@@ -8,12 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Dependencies
-      run: |
-        sudo apt update
-        sudo apt install coreutils p7zip-full qemu-user-static chromium-browser git
-        dpkg -l chromium-browser
-        git clone https://github.com/Printerverse/octoprint_install.git
+    # - name: Install Dependencies
+    #   run: |
+    #     sudo apt update
+    #     sudo apt install coreutils p7zip-full qemu-user-static chromium-browser git
+    #     dpkg -l chromium-browser
+    #     git clone https://github.com/Printerverse/octoprint_install.git
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v2
@@ -27,10 +27,10 @@ jobs:
         path: repository
         submodules: true
 
-    - name: Clone octoprint_install repository
-      run: |
-        cd repository/src
-        git clone https://github.com/Printerverse/octoprint_install.git
+    # - name: Clone octoprint_install repository
+    #   run: |
+    #     cd repository/src
+    #     git clone https://github.com/Printerverse/octoprint_install.git
 
     - name: Download Raspbian Image
       run: |
@@ -50,8 +50,6 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        pwd
-        ls -la ./octoprint_install
         sudo bash -x ./build_dist
 
     - name: Copy output
