@@ -28,3 +28,5 @@
 # Fixed apt mirror
 [ -n "$OCTOPI_APTMIRROR" ] || OCTOPI_APTMIRROR=
 
+# NanoFactory Plugin
+[ -n "$OCTOPI_NANOFACTORY_PLUGIN" ] || OCTOPI_NANOFACTORY_PLUGIN=https://github.com/Printerverse/OctoPrint-NanoFactory/archive/master.zip
